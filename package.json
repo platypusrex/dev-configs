@@ -1,0 +1,35 @@
+{
+  "name": "@platypusrex/dev-configs",
+  "version": "0.0.1",
+  "author": "Frank Cooke",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": ["dist/**/*"],
+  "scripts": {
+    "build:cjs": "swc src -d dist/cjs --config-file ./.swcrc -C module.type=commonjs",
+    "build:esm": "swc src -d dist/esm --config-file ./.swcrc -C module.type=es6",
+    "build:ts": "tsc --declaration --emitDeclarationOnly --outDir ./dist/types --project tsconfig.json",
+    "build": "yarn clean && concurrently \"yarn build:cjs\" \"yarn build:esm\" \"yarn build:ts\"",
+    "clean": "npx rimraf dist",
+    "prepare": "yarn build"
+  },
+  "devDependencies": {
+    "@beemo/cli": "^2.0.6",
+    "@beemo/core": "^2.1.4",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.179",
+    "concurrently": "^7.1.0",
+    "typescript": "^4.6.4"
+  },
+  "peerDependencies": {
+    "@beemo/cli": ">=2.*",
+    "@beemo/core": ">=2.*"
+  },
+  "dependencies": {
+    "@beemo/config-constants": "^1.1.0",
+    "@beemo/driver-eslint": "^2.0.5",
+    "@beemo/driver-prettier": "^2.0.6"
+  }
+}
