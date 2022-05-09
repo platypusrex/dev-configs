@@ -6,7 +6,9 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build:cjs": "swc src -d dist/cjs --config-file ./.swcrc -C module.type=commonjs",
     "build:esm": "swc src -d dist/esm --config-file ./.swcrc -C module.type=es6",
@@ -30,6 +32,12 @@
   "dependencies": {
     "@beemo/config-constants": "^1.1.0",
     "@beemo/driver-eslint": "^2.0.5",
-    "@beemo/driver-prettier": "^2.0.6"
+    "@beemo/driver-prettier": "^2.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "eslint": "^8.15.0",
+    "eslint-plugin-jest": "^26.1.5",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2"
   }
 }
