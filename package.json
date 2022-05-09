@@ -1,23 +1,23 @@
 {
   "name": "@platypusrex/dev-configs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Frank Cooke",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
+  "main": "lib/index.js",
+  "types": "dts/index.d.ts",
   "files": [
-    "dist/**/*"
+    "lib",
+    "dts",
+    "src"
   ],
   "scripts": {
-    "build:cjs": "swc src -d dist/cjs --config-file ./.swcrc -C module.type=commonjs",
-    "build:esm": "swc src -d dist/esm --config-file ./.swcrc -C module.type=es6",
-    "build:ts": "tsc --declaration --emitDeclarationOnly --outDir ./dist/types --project tsconfig.json",
-    "build": "yarn clean && concurrently \"yarn build:cjs\" \"yarn build:esm\" \"yarn build:ts\"",
-    "clean": "npx rimraf dist",
+    "build:cjs": "swc src -d lib --config-file ./.swcrc -C module.type=commonjs",
+    "build:ts": "tsc --declaration --emitDeclarationOnly --outDir ./dts --project tsconfig.json",
+    "build": "yarn clean && concurrently \"yarn build:cjs\" \"yarn build:ts\"",
+    "clean": "npx rimraf lib",
     "prepare": "yarn build"
   },
   "devDependencies": {

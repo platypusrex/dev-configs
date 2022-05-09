@@ -6,4 +6,5 @@
 .DS_Store
 node_modules
 dist
-coverage
+lib
+dts
