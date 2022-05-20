@@ -1,6 +1,6 @@
 {
   "name": "@platypusrex/dev-configs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Frank Cooke",
   "license": "MIT",
   "publishConfig": {
@@ -36,6 +36,7 @@
     "@beemo/config-constants": "^1.1.0",
     "@beemo/driver-eslint": "^2.0.5",
     "@beemo/driver-prettier": "^2.0.6",
+    "@beemo/driver-typescript": "^2.1.2",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
     "eslint": "^8.15.0",
